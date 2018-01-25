@@ -1,7 +1,9 @@
-package com.myapplicationextreme;
+package com.extreme.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.extreme.R;
 
 public class MainActivity extends AppCompatActivity {
 

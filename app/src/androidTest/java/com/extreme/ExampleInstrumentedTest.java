@@ -1,4 +1,4 @@
-package com.myapplicationextreme;
+package com.extreme;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

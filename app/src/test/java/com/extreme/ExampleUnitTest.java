@@ -1,4 +1,4 @@
-package com.myapplicationextreme;
+package com.extreme;
 
 import org.junit.Test;
 
