@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="layoutHeightSmall">50dp</dimen>
+    
+    <dimen name="fontSizeMax">22sp</dimen>
+    <dimen name="fontSizeMedium">17sp</dimen>
+    <dimen name="fontSizeSmall">13sp</dimen>
+
+
+</resources>
