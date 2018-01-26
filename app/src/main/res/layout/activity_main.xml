@@ -14,22 +14,26 @@
         android:layout_weight="1"/>
 
     <RadioGroup
+        android:id="@+id/tab_radiogroup"
         android:layout_width="match_parent"
         android:layout_height="@dimen/layoutHeightSmall"
         android:background="@color/colorMainBackground"
         android:orientation="horizontal">
 
         <RadioButton
+            android:id="@+id/tab_main_page"
             style="@style/bottom_tab"
-            android:text="主页"/>
+            android:text="@string/main_page"/>
 
         <RadioButton
+            android:id="@+id/tab_action"
             style="@style/bottom_tab"
-            android:text="活动"/>
+            android:text="@string/action"/>
 
         <RadioButton
+            android:id="@+id/tab_set"
             style="@style/bottom_tab"
-            android:text="设置"/>
+            android:text="@string/set"/>
 
     </RadioGroup>
 
