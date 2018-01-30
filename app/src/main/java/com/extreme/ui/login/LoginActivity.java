@@ -36,7 +36,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View, V
     @Override
     protected void onResume() {
         super.onResume();
-        presenter.onstart();
+        presenter.onStart();
     }
 
     @Override
@@ -54,7 +54,10 @@ public class LoginActivity extends BaseActivity implements LoginContract.View, V
 
     @Override
     public void onClick(View v) {
-        presenter.getVerificationCode();
+        int viewId = v.getId();
+         if (viewId == btnlogin.getId()) {
+             presenter.login();
+         }
     }
 
     @Override
@@ -64,11 +67,12 @@ public class LoginActivity extends BaseActivity implements LoginContract.View, V
 
     @Override
     public void setVerificationCodeBtnStte(boolean flag) {
+
     }
 
     @Override
     public void clearInput() {
-
+        etpasswords.getText().clear();
     }
 
     @Override

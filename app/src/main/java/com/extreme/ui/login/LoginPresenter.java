@@ -15,7 +15,7 @@ public class LoginPresenter implements LoginContract.Presenter{
     }
 
     @Override
-    public void onstart() {
+    public void onStart() {
         loginView.setLoginBtnState(false);
         loginView.setVerificationCodeBtnStte(false);
     }

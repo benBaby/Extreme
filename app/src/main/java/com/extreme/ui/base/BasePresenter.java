@@ -5,5 +5,6 @@ package com.extreme.ui.base;
  */
 
 public interface BasePresenter {
-    void onstart();
+    //初始化数据
+    void onStart();
 }
