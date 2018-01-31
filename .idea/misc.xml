@@ -30,9 +30,12 @@
   <component name="ProjectType">
     <option name="id" value="Android" />
   </component>
+<<<<<<< HEAD
   <component name="SvnBranchConfigurationManager">
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
+=======
+>>>>>>> f0e5a270e997d687497543d671ae1e0adbe7ce27
   <component name="masterDetails">
     <states>
       <state key="ProjectJDKs.UI">

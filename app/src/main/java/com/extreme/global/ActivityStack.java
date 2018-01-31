@@ -38,7 +38,7 @@ public class ActivityStack {
     }
 
     /**  activity finish */
-    private void finishActivity(FragmentActivity activity) {
+    public void finishActivity(FragmentActivity activity) {
         if (activity != null) {
             activity.finish();
         }

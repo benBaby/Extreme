@@ -12,6 +12,11 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
+    <style name="loadtheme" parent="NoTitlebar">
+        <item name="android:windowBackground">@mipmap/icon_splash</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
     <!-- 底部导航样式 -->
     <style name="bottom_tab">
         <item name="android:layout_weight">1</item>
@@ -21,5 +26,12 @@
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/seclct_tab_font_color</item>
         <item name="android:textSize">@dimen/fontSizeMedium</item>
+    </style>
+
+    <!-- 水平分割线 -->
+    <style name="line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1sp</item>
+        <item name="android:background">@color/line</item>
     </style>
 </resources>
