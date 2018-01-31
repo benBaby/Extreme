@@ -8,7 +8,7 @@ public class MainPresenter implements MainContract.MainPresenter {
 
     private MainContract.MainView mainView;
 
-    public MainPresenter(MainContract.MainView mianView) {
+    MainPresenter(MainContract.MainView mianView) {
         this.mainView = mianView;
         mainView.setPresenter(this);
     }

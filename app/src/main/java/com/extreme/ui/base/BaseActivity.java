@@ -1,5 +1,6 @@
 package com.extreme.ui.base;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import com.extreme.R;
 import com.extreme.customListener.ShowRefreshListener;
 import com.extreme.customListener.ShowRefreshManager;
 import com.extreme.global.ActivityStack;
+import com.extreme.ui.login.LoginActivity;
 
 /**
  * 基础activity
@@ -83,7 +85,7 @@ public abstract class BaseActivity extends AppCompatActivity implements ShowRefr
     protected void onDestroy() {
         super.onDestroy();
         //将当前的activity 移除 ActivityStack管理中
-        ActivityStack.newInstance().popActivity(this);
+        ActivityStack.newInstance().finishActivity(this);
         ShowRefreshManager.newInstance().unRegisterListener(this);
     }
 
@@ -96,5 +98,12 @@ public abstract class BaseActivity extends AppCompatActivity implements ShowRefr
     @Override
     public void onRefresh(Object object) {
 
+    }
+
+    /** 跳转到登录界面 */
+    protected void toLoginActivity() {
+        Intent mIntent = new Intent();
+        mIntent.setClass(this, LoginActivity.class);
+        startActivity(mIntent);
     }
 }

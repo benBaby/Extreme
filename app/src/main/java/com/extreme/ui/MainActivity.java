@@ -100,16 +100,19 @@ public class MainActivity extends BaseActivity implements MainContract.MainView,
             case R.id.tab_main_page:
                 centerTitle.setText(R.string.main_page);
                 replaceFragment(R.id.tab_main_page);
+                drawerlayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
                 break;
 
             case  R.id.tab_action:
                 centerTitle.setText(R.string.action);
                 replaceFragment(R.id.tab_action);
+                drawerlayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
                 break;
 
             case R.id.tab_expand:
                 centerTitle.setText(R.string.expand);
                 replaceFragment(R.id.tab_expand);
+                drawerlayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
                 break;
         }
     }

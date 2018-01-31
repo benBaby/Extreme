@@ -1,4 +1,4 @@
-package com.extreme.model;
+package com.extreme.data.model;
 
 import java.io.Serializable;
 

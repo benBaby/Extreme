@@ -12,6 +12,11 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
+    <style name="loadtheme" parent="NoTitlebar">
+        <item name="android:windowBackground">@mipmap/icon_splash</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
     <!-- 底部导航样式 -->
     <style name="bottom_tab">
         <item name="android:layout_weight">1</item>

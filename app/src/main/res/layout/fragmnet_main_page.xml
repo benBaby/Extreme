@@ -4,12 +4,6 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:textColor="@color/colorFontBlack"
-        android:text="主页"/>
+    <include layout="@layout/layout_recyclerview" />
 
 </LinearLayout>

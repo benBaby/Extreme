@@ -1,4 +1,4 @@
-package com.extreme.model;
+package com.extreme.data.model;
 
 /**
  * Created by ZZ on 2018/1/26.
