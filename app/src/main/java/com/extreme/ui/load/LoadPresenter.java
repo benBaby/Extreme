@@ -28,16 +28,16 @@ public class LoadPresenter implements LoadContract.LoadPresenter {
     @Override
     public boolean getLoginState() {
         Log.i(TAG, "== getLoginState ==");
-        return false;
+        return true;
     }
 
     @Override
     public User getUsernfo() {
-        return null;
+        return new User("曾明峰", 25, "男");
     }
 
     @Override
-    public void getVersionCode() {
-
+    public String getVersionCode() {
+        return "1";
     }
 }

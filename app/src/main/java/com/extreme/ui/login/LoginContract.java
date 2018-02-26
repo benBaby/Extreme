@@ -14,10 +14,8 @@ public interface LoginContract {
     interface View extends BaseView<Presenter> {
         void setLoginBtnState(boolean b);
         void setVerificationCodeBtnStte(boolean b);
-        void clearInput();
-        void loginFail();
-        void loginSuccess();
-        void showProgress();
+        void loginFail();                          //登录失败
+        void loginSuccess();                       //登录成功
     }
 
     interface Presenter extends BasePresenter {

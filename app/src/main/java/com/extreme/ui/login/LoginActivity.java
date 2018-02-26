@@ -69,24 +69,13 @@ public class LoginActivity extends BaseActivity implements LoginContract.View, V
     public void setVerificationCodeBtnStte(boolean flag) {
 
     }
-
     @Override
-    public void clearInput() {
+    public void loginFail() {
         etpasswords.getText().clear();
     }
 
     @Override
-    public void loginFail() {
-
-    }
-
-    @Override
     public void loginSuccess() {
-
-    }
-
-    @Override
-    public void showProgress() {
 
     }
 }

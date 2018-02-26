@@ -22,7 +22,7 @@ public class LoginPresenter implements LoginContract.Presenter{
 
     @Override
     public void login() {
-
+       loginView.loginFail();
     }
 
     @Override

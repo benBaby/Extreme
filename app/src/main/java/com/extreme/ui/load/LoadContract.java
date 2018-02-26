@@ -20,7 +20,7 @@ public interface LoadContract {
     interface LoadPresenter extends BasePresenter {
         boolean getLoginState();   //获取登录状态
         User getUsernfo();          //获取用户信息
-        void getVersionCode();     //获取版本信息
+        String getVersionCode();     //获取版本信息
     }
 
 }

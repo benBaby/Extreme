@@ -1,12 +1,15 @@
 package com.extreme.ui.load;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.extreme.data.model.User;
+import com.extreme.ui.MainActivity;
 import com.extreme.ui.base.BaseActivity;
 
 /**
+ * 登录界面
  * Created by ZZ on 2018/1/31.
  */
 
@@ -42,10 +45,12 @@ public class LoadActivity extends BaseActivity implements LoadContract.LoadView 
         isLogin = presenter.getLoginState();
         user = presenter.getUsernfo();
         if (isLogin && user != null) {
-            presenter.getVersionCode();
+            if (presenter.getVersionCode().equals("1")) {
+                toMmainActivity();
+            }
         } else {
             toLoginActivity();
-            onDestroy();
+            finish();
         }
     }
 
@@ -56,6 +61,8 @@ public class LoadActivity extends BaseActivity implements LoadContract.LoadView 
 
     @Override
     public void toMmainActivity() {
-
+        Intent mIntent = new Intent(this, MainActivity.class);
+        startActivity(mIntent);
+        finish();
     }
 }

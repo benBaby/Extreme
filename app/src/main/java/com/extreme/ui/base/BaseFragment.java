@@ -7,12 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.extreme.customListener.ShowRefreshListener;
+
 /**
  * Fragment 基础类
  * Created by ZZ on 2018/1/30.
  */
 
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment implements ShowRefreshListener {
 
     /** 加载布局文件 */
     protected abstract int getLayoutId();
@@ -30,5 +32,13 @@ public abstract class BaseFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onRefresh() {
 
+    }
+
+    @Override
+    public void onRefresh(Object object) {
+
+    }
 }

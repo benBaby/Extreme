@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar
+<android.support.design.widget.AppBarLayout
+    android:id="@+id/appbarlayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/toolbar"
     android:layout_width="match_parent"
-    android:background="@color/colorPrimary"
     android:layout_height="@dimen/layoutHeightSmall">
 
-    <TextView
-        android:id="@+id/centerTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        tools:text="Title"
-        android:textSize="@dimen/fontSizeMax"
-        android:textColor="@color/colorFontWhite"/>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_scrollFlags="scroll|enterAlways">
 
-</android.support.v7.widget.Toolbar>
+        <TextView
+            android:id="@+id/centerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorFontWhite"
+            android:textSize="@dimen/fontSizeMax"
+            tools:text="Title"/>
+
+    </android.support.v7.widget.Toolbar>
+</android.support.design.widget.AppBarLayout>
