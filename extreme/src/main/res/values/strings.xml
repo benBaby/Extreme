@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Extreme</string>
+
+    <!-- tab_text -->
+    <string name="main_page">主页</string>
+    <string name="action">活动</string>
+    <string name="set">设置</string>
+    <string name="expand">扩展</string>
+
+    <string name="login">登录</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="scan">扫描</string>
+    <string name="rli">日历</string>
+</resources>
