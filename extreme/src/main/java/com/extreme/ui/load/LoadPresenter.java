@@ -4,6 +4,7 @@ package com.extreme.ui.load;
 import android.util.Log;
 
 import com.extreme.data.model.User;
+import com.extreme.global.SharedPreferencesHelper;
 
 /**
  * 加载页逻辑实现类
@@ -28,7 +29,7 @@ public class LoadPresenter implements LoadContract.LoadPresenter {
     @Override
     public boolean getLoginState() {
         Log.i(TAG, "== getLoginState ==");
-        return true;
+        return SharedPreferencesHelper.getLoginState(null);
     }
 
     @Override

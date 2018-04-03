@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.util.Log;
 
+import com.extreme.global.SharedPreferencesHelper;
 import com.extreme.ui.login.LoginActivity;
 
 import java.lang.reflect.InvocationHandler;
@@ -37,13 +38,15 @@ public class AmsHookBinderInvocationHandler implements InvocationHandler {
                     break;
                 }
             }
-            mIntent = (Intent) args[index];
-            String targetPackage = "com.myapplicationextreme";
-            ComponentName componentName = new ComponentName(targetPackage, LoginActivity.class.getName());
-            mIntent.setComponent(componentName);
-            args[index] = mIntent;
+            //在startActivity 时 判断是否登录，没有的话跳转到登录接口
+            if (!SharedPreferencesHelper.getLoginState(null)) {
+                mIntent = (Intent) args[index];
+                String targetPackage = "com.myapplicationextreme";
+                ComponentName componentName = new ComponentName(targetPackage, LoginActivity.class.getName());
+                mIntent.setComponent(componentName);
+                args[index] = mIntent;
+            }
         }
-
         return method.invoke(mBase, args);
     }
 }

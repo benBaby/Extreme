@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.extreme.R;
-import com.extreme.tools.HookManager;
 import com.extreme.ui.base.BaseActivity;
 import com.extreme.ui.base.BaseFragment;
 import com.extreme.ui.event.EventFragment;
@@ -36,7 +35,6 @@ public class MainActivity extends BaseActivity implements MainContract.MainView,
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        HookManager.HokeAMS();
         setContentView(R.layout.activity_main);
         super.onCreate(savedInstanceState);
         new MainPresenter(this);

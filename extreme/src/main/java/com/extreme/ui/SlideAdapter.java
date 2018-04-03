@@ -28,6 +28,8 @@ public class SlideAdapter extends RecyclerView.Adapter<SlideAdapter.SlideViewHol
         list = new ArrayList<>();
         list.add(context.getString(R.string.scan));  //扫描
         list.add(context.getString(R.string.rli));    //日历
+        list.add(context.getString(R.string.video)); //视频
+        list.add(context.getString(R.string.map));    //地图
     }
 
     @Override

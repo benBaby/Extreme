@@ -12,4 +12,6 @@
     <string name="password">密码</string>
     <string name="scan">扫描</string>
     <string name="rli">日历</string>
+    <string name="video">视频</string>
+    <string name="map">地图</string>
 </resources>
