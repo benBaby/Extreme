@@ -66,7 +66,7 @@ public class SlideAdapter extends RecyclerView.Adapter<SlideAdapter.SlideViewHol
         void OnItemClick(String label, int postion);
     }
 
-    public void setSlideAdapterListener(SlideAdapterListener listener) {
+    void setSlideAdapterListener(SlideAdapterListener listener) {
         this.listener = listener;
     }
 }

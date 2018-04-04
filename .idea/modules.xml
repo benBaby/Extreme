@@ -3,15 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Extreme.iml" filepath="$PROJECT_DIR$/Extreme.iml" />
-<<<<<<< HEAD
-      <module fileurl="file://F:\git\Extreme\extreme\app.iml" filepath="F:\git\Extreme\extreme\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/extreme/extreme.iml" filepath="$PROJECT_DIR$/extreme/extreme.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
-=======
-      <module fileurl="file://D:\space\online\Extreme\Extreme.iml" filepath="D:\space\online\Extreme\Extreme.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\space\online\Extreme\app\app.iml" filepath="D:\space\online\Extreme\app\app.iml" />
->>>>>>> e2d71f66d62384b07a0f55615e27d5f12cad4b83
     </modules>
   </component>
 </project>
