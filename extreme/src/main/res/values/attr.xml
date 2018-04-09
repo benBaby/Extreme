@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="InputLayout">
+        <attr name="inputTextSize" format="dimension"/>
+        <attr name="inputTextColor" format="color"/>
+        <attr name="inputTextHint" format="string"/>
+        <attr name="inputFrame" format="boolean"/>
+        <attr name="inputFrameBackground" format="reference"/>
+        <attr name="inputTitle" format="string"/>
+        <attr name="inputTitleSize" format="dimension"/>
+        <attr name="intputTitleColor" format="color" />
+        <attr name="inputBackgroundColor" format="color"/>
+    </declare-styleable>
+</resources>
