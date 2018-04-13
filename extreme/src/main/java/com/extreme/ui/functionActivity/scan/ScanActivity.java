@@ -12,7 +12,7 @@ import java.io.IOException;
 
 /**
  *  集成和优化扫描功能
- *  created by ZMF on 2018-04-04 10:59:16
+ *  created by ZMF on 2018-04-04
  * */
 public class ScanActivity extends BaseActivity implements SurfaceHolder.Callback{
     private static final String TAG = ScanActivity.class.getSimpleName();

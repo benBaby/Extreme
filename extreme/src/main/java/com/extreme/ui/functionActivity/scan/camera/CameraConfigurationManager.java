@@ -85,8 +85,7 @@ public class CameraConfigurationManager {
     }
      */
 
-        cwRotationFromDisplayToCamera =
-                (360 + cwRotationFromNaturalToCamera - cwRotationFromNaturalToDisplay) % 360;
+        cwRotationFromDisplayToCamera = (360 + cwRotationFromNaturalToCamera - cwRotationFromNaturalToDisplay) % 360;
         Log.i(TAG, "Final display orientation: " + cwRotationFromDisplayToCamera);
         if (camera.getFacing() == CameraFacing.FRONT) {
             Log.i(TAG, "Compensating rotation for front camera");
@@ -115,6 +114,8 @@ public class CameraConfigurationManager {
         }
         Log.i(TAG, "Preview size on screen: " + previewSizeOnScreen);
     }
+
+
 
     Point getCameraResolution() {
         return cameraResolution;
