@@ -21,5 +21,21 @@ public class OpenCamera {
         this.orientation = orientation;
     }
 
+    public int getIndex() {
+        return index;
+    }
+
+    public Camera getCamera() {
+        return camera;
+    }
+
+    public CameraFacing getFacing() {
+        return facing;
+    }
+
+    public int getOrientation() {
+        return orientation;
+    }
+
 
 }

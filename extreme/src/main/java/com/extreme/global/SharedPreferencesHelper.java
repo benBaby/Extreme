@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 /**
- * Instructions :
+ * Instructions : SharedPreferences 存储
  * Created by ZZ on 2018/4/3.
  */
 
@@ -37,16 +37,18 @@ public class SharedPreferencesHelper {
         return mEditor;
     }
 
+    /** set Login state */
     public static void setLoginState(Context context, boolean flag) {
         getEditor(context).putBoolean(ISLOGIN, flag);
         getEditor(context).apply();
     }
 
+    /** get Login state */
     public static boolean getLoginState(Context context) {
       return getShared(context).getBoolean(ISLOGIN, true);
     }
 
-    public static void setInit(Context context) {
+    static void setInit(Context context) {
         getEditor(context).putString("initSharedPreference", "initSharedPreference");
         getEditor(context).apply();
     }

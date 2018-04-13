@@ -31,7 +31,6 @@ public class MainActivity extends BaseActivity implements MainContract.MainView,
     private DrawerLayout drawerlayout;
 
     private MainContract.MainPresenter presenter;
-    private RecyclerView recyclerview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,14 +58,14 @@ public class MainActivity extends BaseActivity implements MainContract.MainView,
         drawerlayout = findViewById(R.id.drawerlayout);
         drawerlayout.addDrawerListener(new addDrawerListener());
 
-        recyclerview = findViewById(R.id.drawerlayout_hide_list);
+        RecyclerView recyclerview = findViewById(R.id.drawerlayout_hide_list);
 
         recyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayout.VERTICAL, false));
-
+        //分割线
         DividerItemDecoration itemDecoration = new DividerItemDecoration(this, LinearLayout.VERTICAL);
         itemDecoration.setDrawable(getResources().getDrawable(R.drawable.grayline));
         recyclerview.addItemDecoration(itemDecoration);
-
+        //适配器
         SlideAdapter adapter = new SlideAdapter(this);
         recyclerview.setAdapter(adapter);
         adapter.setSlideAdapterListener(new addSlideAdapterListener());
