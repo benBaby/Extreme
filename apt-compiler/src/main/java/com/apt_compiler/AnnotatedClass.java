@@ -3,7 +3,6 @@ package com.apt_compiler;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
-import com.squareup.javapoet.ParameterizedTypeName;
 import com.squareup.javapoet.TypeName;
 import com.squareup.javapoet.TypeSpec;
 
@@ -32,8 +31,8 @@ public class AnnotatedClass {
                 .addModifiers(Modifier.PUBLIC)
                 .addAnnotation(Override.class)
                 .addParameter(TypeName.get(mClassElement.asType()), "host", Modifier.FINAL)
-                .addParameter(TypeName.OBJECT, "source")
-                .addParameter(TypeUtil.PROVIDER, "provider");
+                .addParameter(TypeName.OBJECT, "source");
+//                .addParameter(TypeUtil.PROVIDER, "provider");
 
         for (BindViewField field : mFields) {
             // find views
@@ -65,7 +64,7 @@ public class AnnotatedClass {
         // generate whole class
         TypeSpec finderClass = TypeSpec.classBuilder(mClassElement.getSimpleName() + "$$Finder")
                 .addModifiers(Modifier.PUBLIC)
-                .addSuperinterface(ParameterizedTypeName.get(TypeUtil.FINDER, TypeName.get(mClassElement.asType())))
+//                .addSuperinterface(ParameterizedTypeName.get(TypeUtil.FINDER, TypeName.get(mClassElement.asType())))
                 .addMethod(injectMethodBuilder.build())
                 .build();
 
