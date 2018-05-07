@@ -1,8 +1,12 @@
 package com.extreme.ui.functionActivity.scan.camera;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.hardware.Camera;
+import android.os.Build;
+import android.preference.PreferenceManager;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.view.Display;
 import android.view.Surface;
@@ -115,11 +119,89 @@ public class CameraConfigurationManager {
         Log.i(TAG, "Preview size on screen: " + previewSizeOnScreen);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
+    void setDesiredCameraParameters(OpenCamera camera, boolean safeMode) {
 
+        Camera theCamera = camera.getCamera();
+        Camera.Parameters parameters = theCamera.getParameters();
+
+        if (parameters == null) {
+            Log.w(TAG, "Device error: no camera parameters are available. Proceeding without configuration.");
+            return;
+        }
+
+        Log.i(TAG, "Initial camera parameters: " + parameters.flatten());
+
+        if (safeMode) {
+            Log.w(TAG, "In camera config safe mode -- most settings will not be honored");
+        }
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+
+        initializeTorch(parameters, prefs, safeMode);
+
+        CameraConfigurationUtils.setFocus(
+                parameters,
+                prefs.getBoolean(PreferencesActivity.KEY_AUTO_FOCUS, true),
+                prefs.getBoolean(PreferencesActivity.KEY_DISABLE_CONTINUOUS_FOCUS, true),
+                safeMode);
+
+        if (!safeMode) {
+            if (prefs.getBoolean(PreferencesActivity.KEY_INVERT_SCAN, false)) {
+                CameraConfigurationUtils.setInvertColor(parameters);
+            }
+
+            if (!prefs.getBoolean(PreferencesActivity.KEY_DISABLE_BARCODE_SCENE_MODE, true)) {
+                CameraConfigurationUtils.setBarcodeSceneMode(parameters);
+            }
+
+            if (!prefs.getBoolean(PreferencesActivity.KEY_DISABLE_METERING, true)) {
+                CameraConfigurationUtils.setVideoStabilization(parameters);
+                CameraConfigurationUtils.setFocusArea(parameters);
+                CameraConfigurationUtils.setMetering(parameters);
+            }
+
+            //SetRecordingHint to true also a workaround for low framerate on Nexus 4
+            //https://stackoverflow.com/questions/14131900/extreme-camera-lag-on-nexus-4
+            parameters.setRecordingHint(true);
+
+        }
+
+        parameters.setPreviewSize(bestPreviewSize.x, bestPreviewSize.y);
+
+        theCamera.setParameters(parameters);
+
+        theCamera.setDisplayOrientation(cwRotationFromDisplayToCamera);
+
+        Camera.Parameters afterParameters = theCamera.getParameters();
+        Camera.Size afterSize = afterParameters.getPreviewSize();
+        if (afterSize != null && (bestPreviewSize.x != afterSize.width || bestPreviewSize.y != afterSize.height)) {
+            Log.w(TAG, "Camera said it supported preview size " + bestPreviewSize.x + 'x' + bestPreviewSize.y +
+                    ", but after setting it, preview size is " + afterSize.width + 'x' + afterSize.height);
+            bestPreviewSize.x = afterSize.width;
+            bestPreviewSize.y = afterSize.height;
+        }
+    }
 
     Point getCameraResolution() {
         return cameraResolution;
     }
 
+    Point getScreenResolution() {
+        return screenResolution;
+    }
+
+    private void initializeTorch(Camera.Parameters parameters, SharedPreferences prefs, boolean safeMode) {
+        boolean currentSetting = FrontLightMode.readPref(prefs) == FrontLightMode.ON;
+        doSetTorch(parameters, currentSetting, safeMode);
+    }
+
+    private void doSetTorch(Camera.Parameters parameters, boolean newSetting, boolean safeMode) {
+        CameraConfigurationUtils.setTorch(parameters, newSetting);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        if (!safeMode && !prefs.getBoolean(PreferencesActivity.KEY_DISABLE_EXPOSURE, true)) {
+            CameraConfigurationUtils.setBestExposure(parameters, newSetting);
+        }
+    }
 
 }

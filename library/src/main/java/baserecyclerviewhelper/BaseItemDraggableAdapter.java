@@ -17,6 +17,7 @@ import baserecyclerviewhelper.listener.OnItemDragListener;
 import baserecyclerviewhelper.listener.OnItemSwipeListener;
 
 /**
+ *
  * Created by luoxw on 2016/7/13.
  */
 public abstract class BaseItemDraggableAdapter<T, K extends BaseViewHolder> extends BaseQuickAdapter<T, K> {

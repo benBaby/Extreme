@@ -3,7 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Extreme.iml" filepath="$PROJECT_DIR$/Extreme.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://F:\git\Extreme\app\app.iml" filepath="F:\git\Extreme\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apt/apt.iml" filepath="$PROJECT_DIR$/apt/apt.iml" />
+      <module fileurl="file://F:\git\Extreme\apt-annotation\apt.iml" filepath="F:\git\Extreme\apt-annotation\apt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apt-annotation/apt-annotation.iml" filepath="$PROJECT_DIR$/apt-annotation/apt-annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apt-compiler/apt-compiler.iml" filepath="$PROJECT_DIR$/apt-compiler/apt-compiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/extreme/extreme.iml" filepath="$PROJECT_DIR$/extreme/extreme.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
     </modules>
   </component>
 </project>

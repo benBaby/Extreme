@@ -69,7 +69,6 @@ public class MainActivity extends BaseActivity implements MainContract.MainView,
         SlideAdapter adapter = new SlideAdapter(this);
         recyclerview.setAdapter(adapter);
         adapter.setSlideAdapterListener(new addSlideAdapterListener());
-
     }
 
     /** 初始化fragment */

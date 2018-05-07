@@ -20,6 +20,7 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.hardware.Camera;
 import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 
 import java.util.Arrays;
@@ -192,6 +193,7 @@ public final class CameraConfigurationUtils {
         new Camera.Area(new Rect(-areaPer1000, -areaPer1000, areaPer1000, areaPer1000), 1));
   }
 
+  @RequiresApi(api = Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
   public static void setVideoStabilization(Camera.Parameters parameters) {
     if (parameters.isVideoStabilizationSupported()) {
       if (parameters.getVideoStabilization()) {

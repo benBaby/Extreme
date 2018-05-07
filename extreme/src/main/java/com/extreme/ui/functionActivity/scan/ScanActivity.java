@@ -1,6 +1,8 @@
 package com.extreme.ui.functionActivity.scan;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.view.SurfaceHolder;
 
@@ -56,6 +58,7 @@ public class ScanActivity extends BaseActivity implements SurfaceHolder.Callback
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
     private void initCamera(SurfaceHolder surfaceHolder) {
         if (surfaceHolder == null) {
             throw new IllegalStateException("No SurfaceHolder provided");

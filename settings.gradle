@@ -1,1 +1,1 @@
-include ':extreme', ':library'
+include ':extreme', ':library', ':apt', ':apt-compiler', ':apt-annotation', ':apt-annotation'
